@@ -1,3 +1,18 @@
+@font-face {
+  font-family: chillax;
+  src: url(./Chillax-Regular.woff);
+}
+
+@font-face {
+  font-family: satoshi;
+  src: url(./Satoshi-Light.woff);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(./roboto.woff2);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,13 +26,14 @@ body {
 }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  // font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: chillax;
   color: rgb(218, 213, 213);
   font-size: clamp(14px, 1vw, 18px);
 }
 
 body {
-  background-color: #1d1d1d;
+  background-color: #121212;
 }
 
 @mixin flex-column($gap: 0rem) {
@@ -26,8 +42,12 @@ body {
   gap: $gap;
 }
 
-section{
+section.view1 {
   max-width: 2000px;
+}
+
+p {
+  font-family: satoshi;
 }
 
 main {
@@ -35,7 +55,49 @@ main {
   @include flex-column(0rem);
   align-items: center;
 
-  section {
+  nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1.4rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+
+    .lefty h1 {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    // .righty {
+    //   display: none;
+    // }
+
+    .mobile-righty {
+      @include flex-column(0.5rem);
+      flex-direction: row;
+
+      .nav-icon {
+        color: #fff;
+        background-color: #1e1e1e;
+        font-size: 1rem;
+        text-transform: uppercase;
+        padding: 1rem 1.6rem;
+        border-radius: 8px;
+
+        button {
+          background-color: yellow;
+          border: none;
+          font-size: 1rem;
+          border-radius: 50%;
+          padding: 0.2rem 0.5rem;
+          margin-left: 0.2rem;
+        }
+      }
+    }
+  }
+
+  section.view1 {
     width: 100%;
     padding: 1rem;
     @include flex-column(1rem);
@@ -50,10 +112,99 @@ main {
     }
 
     .bottom {
-      background-color: #282727;
+      background-color: #1e1e1e;
       border-radius: 10px;
-      padding: 1rem;
+      padding: 3rem 2rem;
       @include flex-column(3rem);
+
+      .para-titel {
+        font-family: roboto;
+        font-weight: 900;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        line-height: 160%;
+        padding-bottom: 1rem;
+      }
+
+      .text {
+        @include flex-column(0.7rem);
+
+        h1 {
+          font-weight: 500;
+          font-size: 2.6rem;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-weight: 100;
+          font-size: 1.5rem;
+          opacity: 0.6;
+          line-height: 1.5;
+          padding-bottom: 1rem;
+        }
+
+        button {
+          width: fit-content;
+          border: none;
+          outline: none;
+          padding: 0.7rem 1rem;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+  }
+
+  section.view2 {
+    width: 100%;
+    @include flex-column(1rem);
+    padding: 1rem;
+
+    .top,
+    .bottom {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      .element {
+        text-align: center;
+        @include flex-column(0.2rem);
+
+        small {
+          opacity: 0.6;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  section.view3 {
+    width: 100%;
+    padding: 1rem;
+    @include flex-column(1rem);
+
+    .top {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-radius: 0.7rem;
+      }
+    }
+
+    .bottom {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 2rem;
+      @include flex-column(3rem);
+
+      .para-titel {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+      }
 
       .text {
         @include flex-column(0.7rem);
@@ -61,6 +212,7 @@ main {
         h1 {
           font-weight: 400;
           font-size: 2.3rem;
+          padding: 1rem 0;
           text-transform: uppercase;
         }
 
@@ -69,6 +221,10 @@ main {
           font-size: 1.5rem;
           opacity: 0.8;
           line-height: 1.5;
+        }
+
+        .p2 {
+          margin-top: 0.9rem;
         }
 
         button {
@@ -86,27 +242,119 @@ main {
 @media (min-width:900px) {
   main {
 
-    section {
+    nav {
       flex-direction: row;
+
+      .righty {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+
+        .nav-icon {
+          color: #fff;
+          background-color: #1e1e1e;
+          font-size: 1rem;
+          text-transform: uppercase;
+          padding: 1rem 1.6rem;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: 0.5s;
+
+          button {
+            background-color: yellow;
+            border: none;
+            font-size: 1rem;
+            border-radius: 50%;
+            padding: 0.2rem 0.5rem;
+            margin-left: 0.6rem;
+          }
+        }
+
+        .nav-icon:nth-last-child(1) {
+          color: black;
+          background-color: yellow;
+        }
+
+        .nav-icon:nth-last-child(1):hover {
+          color: yellow;
+          background-color: black;
+        }
+
+        .nav-icon:hover{
+            color: black;
+            background-color: white;
+          }
+      }
+
+      .mobile-righty {
+        display: none;
+      }
+    }
+
+    section.view1 {
+      flex-direction: row;
+
       .top,
       .bottom {
         width: 50%;
       }
 
-      .bottom{
+      .bottom {
         justify-content: space-between;
         padding: 3rem;
 
-        .text{
+        .text {
           gap: 1.5rem;
 
-          h1{
+          h1 {
             font-size: 4rem;
           }
-          
-          p{
+
+          p {
             width: 80%;
             font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    section.view2 {
+      flex-direction: row;
+    }
+
+    section.view3 {
+      flex-direction: row-reverse;
+
+      .top,
+      .bottom {
+        width: 50%;
+      }
+
+      .bottom {
+        justify-content: space-between;
+        padding: 3rem;
+
+        .text {
+          gap: 1.5rem;
+
+          h1 {
+            font-size: 3.5rem;
+          }
+
+          p {
+            width: 40%;
+            font-size: 1rem;
+            line-height: 2rem;
+          }
+
+          .pera {
+            display: flex;
+            gap: 3rem;
+          }
+
+          .p1 {
+            padding-top: 1rem;
           }
         }
       }
