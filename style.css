@@ -60,6 +60,9 @@ main nav .lefty h1 {
   font-size: 1.4rem;
   font-weight: 400;
 }
+main nav .righty {
+  display: none;
+}
 main nav .mobile-righty {
   display: flex;
   flex-direction: column;
@@ -73,6 +76,8 @@ main nav .mobile-righty .nav-icon {
   text-transform: uppercase;
   padding: 1rem 1.6rem;
   border-radius: 8px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 main nav .mobile-righty .nav-icon button {
   background-color: yellow;
@@ -81,6 +86,13 @@ main nav .mobile-righty .nav-icon button {
   border-radius: 50%;
   padding: 0.2rem 0.5rem;
   margin-left: 0.2rem;
+}
+main nav .mobile-righty .nav-icon:hover {
+  color: black;
+  background-color: white;
+}
+main nav .nav-icon:nth-child(2) {
+  display: none;
 }
 main section.view1 {
   width: 100%;
@@ -127,15 +139,19 @@ main section.view1 .bottom .text p {
   font-size: 1.5rem;
   opacity: 0.6;
   line-height: 1.5;
-  padding-bottom: 1rem;
 }
-main section.view1 .bottom .text button {
+main section.view1 .bottom button {
   width: -moz-fit-content;
   width: fit-content;
   border: none;
   outline: none;
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+main section.view1 .bottom button:hover {
+  background-color: yellow;
 }
 main section.view2 {
   width: 100%;
@@ -183,14 +199,18 @@ main section.view3 .top img {
 main section.view3 .bottom {
   background-color: #1e1e1e;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 main section.view3 .bottom .para-titel {
-  text-transform: uppercase;
-  font-size: 1.2rem;
+  font-family: roboto;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 160%;
+  padding-bottom: 1rem;
 }
 main section.view3 .bottom .text {
   display: flex;
@@ -198,27 +218,61 @@ main section.view3 .bottom .text {
   gap: 0.7rem;
 }
 main section.view3 .bottom .text h1 {
-  font-weight: 400;
-  font-size: 2.3rem;
-  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 2.6rem;
   text-transform: uppercase;
 }
 main section.view3 .bottom .text p {
   font-weight: 100;
   font-size: 1.5rem;
-  opacity: 0.8;
+  opacity: 0.6;
   line-height: 1.5;
 }
-main section.view3 .bottom .text .p2 {
-  margin-top: 0.9rem;
+main section.view4 {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-main section.view3 .bottom .text button {
-  width: -moz-fit-content;
-  width: fit-content;
-  border: none;
-  outline: none;
-  padding: 0.7rem 1rem;
-  border-radius: 0.5rem;
+main section.view4 .top {
+  width: 100%;
+}
+main section.view4 .top img {
+  width: 100%;
+  border-radius: 0.7rem;
+}
+main section.view4 .bottom {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+main section.view4 .bottom .para-titel {
+  font-family: roboto;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 160%;
+  padding-bottom: 1rem;
+}
+main section.view4 .bottom .text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+main section.view4 .bottom .text h1 {
+  font-weight: 500;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
+main section.view4 .bottom .text p {
+  font-weight: 100;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  line-height: 1.5;
 }
 
 @media (min-width: 900px) {
@@ -246,7 +300,11 @@ main section.view3 .bottom .text button {
     font-size: 1rem;
     border-radius: 50%;
     padding: 0.2rem 0.5rem;
-    margin-left: 0.6rem;
+    margin-left: 0.2rem;
+  }
+  main nav .righty .nav-icon:hover {
+    color: black;
+    background-color: white;
   }
   main nav .righty .nav-icon:nth-last-child(1) {
     color: black;
@@ -255,10 +313,6 @@ main section.view3 .bottom .text button {
   main nav .righty .nav-icon:nth-last-child(1):hover {
     color: yellow;
     background-color: black;
-  }
-  main nav .righty .nav-icon:hover {
-    color: black;
-    background-color: white;
   }
   main nav .mobile-righty {
     display: none;
@@ -315,5 +369,31 @@ main section.view3 .bottom .text button {
   }
   main section.view3 .bottom .text .p1 {
     padding-top: 1rem;
+  }
+  main section.view4 {
+    flex-direction: row;
+  }
+  main section.view4 .top,
+  main section.view4 .bottom {
+    width: 50%;
+  }
+  main section.view4 .bottom {
+    justify-content: space-between;
+    padding: 3rem;
+  }
+  main section.view4 .bottom .text {
+    gap: 1.5rem;
+  }
+  main section.view4 .bottom .text h1 {
+    font-size: 3.5rem;
+  }
+  main section.view4 .bottom .text p {
+    width: 40%;
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  main section.view4 .bottom .text .pera {
+    display: flex;
+    gap: 3rem;
   }
 }/*# sourceMappingURL=style.css.map */
