@@ -239,7 +239,7 @@ main section.view3 .bottom .text p {
 }
 main section.view4 {
   width: 100%;
-  padding: 1rem;
+  padding: 0rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -296,7 +296,7 @@ main section.view5 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem;
 }
 main section.view5 .card {
@@ -313,11 +313,11 @@ main section.view5 .card {
 main section.view5 .card .icon,
 main section.view5 .card .bottom {
   background-color: rgba(72, 72, 72, 0.445);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  border: 1px solid white;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border: 1px solid none;
   border-radius: 0.7rem;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 main section.view5 .card .top {
   display: flex;
@@ -331,11 +331,19 @@ main section.view5 .card .icon {
 }
 main section.view5 .card .bottom {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
+main section.view5 .card .bottom h1 {
+  width: 60%;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
 main section.view5 .card .bottom p {
   text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
 }
 main section.view5 #card1 {
   background-image: url(./view5\ \(card1\).webp);
@@ -348,7 +356,7 @@ main section.view5 #card3 {
 }
 main section.view6 {
   width: 100%;
-  padding: 1rem;
+  padding: 0rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -552,5 +560,8 @@ main section.view6 .bottom button:hover {
   main section.view6 .top,
   main section.view6 .bottom {
     width: 50%;
+  }
+  main section.view6 .bottom button {
+    margin-top: 12rem;
   }
 }/*# sourceMappingURL=style.css.map */
