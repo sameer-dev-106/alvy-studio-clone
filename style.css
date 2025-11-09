@@ -32,7 +32,11 @@ body {
   background-color: #121212;
 }
 
-section.view1 {
+nav {
+  max-width: 2000px;
+}
+
+section {
   max-width: 2000px;
 }
 
@@ -90,6 +94,9 @@ main nav .mobile-righty .nav-icon button {
 main nav .mobile-righty .nav-icon:hover {
   color: black;
   background-color: white;
+}
+main nav .mobile-righty .ri-menu-line {
+  font-size: 1.5rem;
 }
 main nav .nav-icon:nth-child(2) {
   display: none;
@@ -274,6 +281,68 @@ main section.view4 .bottom .text p {
   opacity: 0.6;
   line-height: 1.5;
 }
+main section.view5-top {
+  width: 100%;
+  display: flex;
+  align-self: center;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+main section.view5 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+main section.view5 .card {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  justify-content: space-between;
+  padding: 1rem;
+}
+main section.view5 .card .icon,
+main section.view5 .card .bottom {
+  background-color: rgba(72, 72, 72, 0.445);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border: 1px solid white;
+  border-radius: 0.7rem;
+  padding: 0.5rem;
+}
+main section.view5 .card .top {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+main section.view5 .card .icon {
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 50%;
+}
+main section.view5 .card .bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+main section.view5 .card .bottom p {
+  text-transform: uppercase;
+}
+main section.view5 #card1 {
+  background-image: url(./view5\ \(card1\).webp);
+}
+main section.view5 #card2 {
+  background-image: url(./view5\ \(card2\).webp);
+}
+main section.view5 #card3 {
+  background-image: url(./view5\ \(card3\).webp);
+}
 
 @media (min-width: 900px) {
   main nav {
@@ -395,5 +464,12 @@ main section.view4 .bottom .text p {
   main section.view4 .bottom .text .pera {
     display: flex;
     gap: 3rem;
+  }
+  main section.view5-top {
+    font-size: 1.5rem;
+    padding-left: 3rem;
+  }
+  main section.view5 {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=style.css.map */
