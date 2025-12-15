@@ -1,0 +1,131 @@
+@mixin flex-column($gap: 0rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin all-nav-icon() {
+  .nav-icon {
+    color: #fff;
+    background-color: #1e1e1e;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 1rem 1.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s all ease;
+
+    button {
+      background-color: yellow;
+      border: none;
+      font-size: 1rem;
+      border-radius: 50%;
+      padding: 0.2rem 0.5rem;
+      margin-left: 0.2rem;
+    }
+  }
+
+  .nav-icon:hover {
+    color: black;
+    background-color: white;
+  }
+}
+
+@mixin all-section-top() {
+  .top {
+    width: 100%;
+
+    img {
+      width: 100%;
+      border-radius: 0.7rem;
+    }
+  }
+}
+
+@mixin all-sections-bottom() {
+  .bottom {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    @include flex-column(3rem);
+
+    .para-titel {
+      font-family: roboto;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      line-height: 160%;
+      padding-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .text {
+      @include flex-column(0.7rem);
+
+      h1 {
+        font-weight: 500;
+        font-size: 2.6rem;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-weight: 100;
+        font-size: 1.5rem;
+        opacity: 0.6;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+@mixin all-card() {
+  .card {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    border-radius: 0.7rem;
+
+    @include flex-column(0rem);
+    justify-content: space-between;
+    padding: 1rem;
+
+
+    .icon,
+    .bottom {
+      background-color: rgba(72, 72, 72, 0.445);
+      backdrop-filter: blur(12px);
+      border: 1px solid none;
+      border-radius: 0.7rem;
+      padding: 1rem;
+    }
+
+    .top {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+
+    .icon {
+      width: fit-content;
+      border-radius: 50%;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+
+      h1 {
+        width: 60%;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+      }
+      p {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
